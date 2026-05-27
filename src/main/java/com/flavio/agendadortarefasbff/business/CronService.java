@@ -39,7 +39,7 @@ public class CronService {
         log.info("Tarefas cadastradas", listaTarefas);
         listaTarefas.forEach(tarefa
                 ->{emailService.enviaEmail(tarefa);
-            log.info("Email enviado: {}", tarefa.getEmailUsuario());
+            log.info("Email enviado: ", tarefa.getEmailUsuario());
             tarefasService.alteraStatus(StatusNotificacaoEnum.NOTIFICADO, tarefa.getId(),
                     token);});
         log.info("Finalizada a busca e notificação de tarefas");
